@@ -10,6 +10,7 @@ const init = async () => {
         origin: ['*'],
       },
     },
+    reuseAddress: true
   });
  
   server.route(routes);
