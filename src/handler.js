@@ -2,7 +2,7 @@ const {nanoid} = require('nanoid')
 const notes = require('./notes');
 
 const addNoteHandler = (request, h) => {
-    const { title, tags, body } = request.params;
+    let { title, tags, body } = request.payload;
    
     const id = nanoid(16);
     const createdAt = new Date().toISOString();
@@ -67,7 +67,7 @@ const addNoteHandler = (request, h) => {
     const updatedAt = new Date().toISOString();
    
     const index = notes.findIndex((note) => note.id === id);
-   
+   console.log(index)
     if (index !== -1) {
       notes[index] = {
         ...notes[index],
@@ -117,4 +117,4 @@ const addNoteHandler = (request, h) => {
   };
    
 
-  module.exports = addNoteHandler, getAllNotesHandler, getNoteByIdHandler, editNoteByIdHandler, deleteNoteByIdHandler
+  module.exports = {addNoteHandler, getAllNotesHandler, getNoteByIdHandler, editNoteByIdHandler, deleteNoteByIdHandler}

@@ -1,12 +1,3 @@
-const notes = [
-    {
-        title : "qweqwe",
-        tags : "qweqwe",
-        body : "qweqwe",
-        id : "qweqwe",
-        createdAt : "qweqwe", 
-        updatedAt : "qweqwe",
-    }
-];
+const notes = [];
  
-module.exports = notes
+module.exports = notes;
